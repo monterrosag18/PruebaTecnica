@@ -1,0 +1,230 @@
+/* Estilos para el dashboard */
+.dashboard-header {
+    display: flex; /* Usa flexbox para el layout */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 2rem; /* Margen inferior */
+}
+
+.period-selector {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 1rem; /* Espacio entre elementos */
+}
+
+.period-selector select {
+    padding: 0.5rem 1rem; /* Relleno interno */
+    border: 1px solid #e0e4e8; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: white; /* Fondo blanco */
+}
+
+/* Tarjetas de resumen */
+.summary-cards {
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+    gap: 1rem; /* Espacio entre tarjetas */
+    margin-bottom: 1.5rem; /* Margen inferior */
+}
+
+.card {
+    background: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 1rem; /* Relleno interno */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra suave */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 0.8rem; /* Espacio entre elementos */
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta al pasar el mouse */
+}
+
+.card-icon {
+    width: 40px; /* Ancho fijo */
+    height: 40px; /* Alto fijo */
+    border-radius: 10px; /* Bordes redondeados */
+    background: var(--primary-color); /* Color de fondo principal */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.card-icon i {
+    color: white; /* Color blanco */
+    font-size: 1.5rem; /* Tamaño de fuente */
+}
+
+.card-content h3 {
+    font-size: 0.9rem; /* Tamaño de fuente */
+    color: #666; /* Color gris */
+    margin-bottom: 0.5rem; /* Margen inferior */
+}
+
+.card-value {
+    font-size: 1.5rem; /* Tamaño de fuente grande */
+    font-weight: 600; /* Negrita */
+    color: var(--secondary-color); /* Color secundario */
+    margin-bottom: 0.3rem; /* Margen inferior */
+}
+
+.trend {
+    font-size: 0.8rem; /* Tamaño de fuente pequeño */
+    display: block; /* Bloque */
+}
+
+.trend.positive {
+    color: #28a745; /* Color verde para tendencia positiva */
+}
+
+.trend.negative {
+    color: #dc3545; /* Color rojo para tendencia negativa */
+}
+
+.trend.neutral {
+    color: #6c757d; /* Color gris para tendencia neutral */
+}
+
+/* Contenedor de gráficos */
+.charts-container {
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 1rem; /* Espacio entre gráficos */
+    margin-bottom: 2rem; /* Margen inferior */
+}
+
+.chart-card {
+    background: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 1.5rem; /* Relleno interno */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra suave */
+    min-height: 300px; /* Altura mínima */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Dirección columna */
+}
+
+.chart-card canvas {
+    width: 100% !important; /* Ancho completo */
+    height: auto !important; /* Alto automático */
+    min-height: 250px; /* Altura mínima */
+    max-height: 400px; /* Altura máxima */
+}
+
+.chart-card h3 {
+    color: var(--secondary-color); /* Color secundario */
+    margin-bottom: 1rem; /* Margen inferior */
+    font-size: 1.1rem; /* Tamaño de fuente */
+}
+
+/* Tabla de métricas */
+.detailed-metrics {
+    background: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 1.5rem; /* Relleno interno */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra suave */
+}
+
+.metrics-table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsa bordes */
+    margin-top: 1rem; /* Margen superior */
+}
+
+.metrics-table th,
+.metrics-table td {
+    padding: 1rem; /* Relleno interno */
+    text-align: left; /* Alineación izquierda */
+    border-bottom: 1px solid #e0e4e8; /* Borde inferior */
+}
+
+.metrics-table th {
+    background: #f8f9fa; /* Fondo gris claro */
+    color: var(--secondary-color); /* Color secundario */
+    font-weight: 600; /* Negrita */
+}
+
+.metrics-table tr:hover {
+    background: #f8f9fa; /* Fondo gris al hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column; /* Dirección columna */
+        gap: 1rem; /* Espacio entre elementos */
+        align-items: flex-start; /* Alinea al inicio */
+    }
+
+    .period-selector {
+        width: 100%; /* Ancho completo */
+    }
+
+    .period-selector select {
+        width: 100%; /* Ancho completo */
+    }
+
+    .card {
+        flex-direction: column; /* Dirección columna */
+        text-align: center; /* Texto centrado */
+        padding: 1rem 0.8rem; /* Relleno interno */
+    }
+
+    .card-icon {
+        margin: 0 auto; /* Margen automático */
+    }
+
+    .chart-card {
+        padding: 1rem; /* Relleno interno */
+        min-height: 250px; /* Altura mínima */
+    }
+
+    .chart-card canvas {
+        min-height: 200px; /* Altura mínima */
+    }
+
+    .detailed-metrics {
+        padding: 1rem; /* Relleno interno */
+    }
+
+    .charts-container {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+
+    .metrics-table {
+        display: block; /* Bloque */
+        overflow-x: auto; /* Scroll horizontal */
+    }
+}
+
+@media (max-width: 480px) {
+    .summary-cards {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+
+    .metrics-table {
+        font-size: 0.9rem; /* Tamaño de fuente reducido */
+    }
+
+    .metrics-table th,
+    .metrics-table td {
+        padding: 0.8rem 0.5rem; /* Relleno interno reducido */
+    }
+
+    .card-value {
+        font-size: 1.3rem; /* Tamaño de fuente reducido */
+    }
+
+    .trend {
+        font-size: 0.75rem; /* Tamaño de fuente reducido */
+    }
+
+    .chart-card {
+        min-height: 200px; /* Altura mínima reducida */
+    }
+
+    .chart-card canvas {
+        min-height: 180px; /* Altura mínima reducida */
+    }
+}

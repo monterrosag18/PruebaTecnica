@@ -1,0 +1,280 @@
+<!-- Declaración del tipo de documento HTML -->
+<!DOCTYPE html>
+<!-- Elemento raíz HTML con idioma español -->
+<html lang="es">
+<!-- Sección head con metadatos -->
+<head>
+    <!-- Codificación de caracteres UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Configuración de la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Portal de Información - IEB</title>
+    <!-- Enlace a hoja de estilos principal -->
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <!-- Enlace a hoja de estilos específica para detalles de empleado -->
+    <link rel="stylesheet" href="../Styles/empleado-detalle.css">
+    <!-- Enlace a Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<!-- Cuerpo del documento -->
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <!-- Título principal -->
+        <h1>Gestor del Talento Humano</h1>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="menu">
+            <!-- Título del menú -->
+            <h2>Menú</h2>
+            <!-- Lista de navegación -->
+            <ul>
+                <!-- Enlaces del menú -->
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="informes.html">Informes e Indicadores</a></li>
+                <li><a href="listado-empleados.html">Listado de Empleados</a></li>
+                <li><a href="metadatos.html">Gestión de Metadatos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <!-- Contenedor del perfil -->
+            <div class="profile-container">
+                <!-- Encabezado del perfil -->
+                <div class="profile-header">
+                    <!-- Contenedor de la foto de perfil -->
+                    <div class="profile-photo">
+                        <!-- Imagen de perfil -->
+                        <img src="" alt="Foto de perfil">
+                    </div>
+                    <!-- Información del encabezado del perfil -->
+                    <div class="profile-info-header">
+                        <!-- Nombre del empleado -->
+                        <h2></h2>
+                        <!-- Cargo del empleado -->
+                        <p class="profile-position"></p>
+                        <!-- Departamento del empleado -->
+                        <p class="profile-department"></p>
+                        <!-- Estado del empleado -->
+                        <div class="profile-status">
+                            <!-- Indicador visual de estado -->
+                            <span class="status-dot"></span>
+                            <!-- Texto de estado -->
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acciones del perfil -->
+                <div class="profile-actions">
+                    <!-- Botones de acción -->
+                    <div class="action-buttons">
+                        <!-- Botón de actualizar -->
+                        <button class="btn-actualizar">
+                            <!-- Icono de actualizar -->
+                            <i class="fas fa-sync-alt"></i>
+                            Actualizar
+                        </button>
+                        <!-- Botón de exportar -->
+                        <button class="btn-export">
+                            <!-- Icono de exportar -->
+                            <i class="fas fa-file-export"></i>
+                            Exportar
+                        </button>
+                    </div>
+                    <!-- Selector de empleado -->
+                    <div class="employee-selector">
+                        <!-- Lista desplegable de empleados -->
+                        <select id="employeeSelect">
+                            <!-- Opciones de empleados -->
+                            <option value="2345678">Cadavid Escobar Juan Pablo</option>
+                            <option value="3456789">Arroyave Loaiza Esteban</option>
+                            <option value="4567890">Gómez Pérez María</option>
+                            <option value="5678901">Rodríguez López Carlos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Navegación del perfil -->
+                <nav class="profile-nav">
+                    <!-- Enlaces de navegación con iconos -->
+                    <a href="#informacion-basica" class="active">
+                        <i class="fas fa-info-circle"></i>
+                        Información Básica
+                    </a>
+                    <a href="#informacion-personal">
+                        <i class="fas fa-user"></i>
+                        Información Personal
+                    </a>
+                    <a href="#novedades-empleados">
+                        <i class="fas fa-bell"></i>
+                        Novedades de Empleados
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-phone-alt"></i>
+                        Contacto Emergencias
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-shield-alt"></i>
+                        Seguridad Social
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-users"></i>
+                        Familiares
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-file-alt"></i>
+                        Archivos
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-graduation-cap"></i>
+                        Info. Académica
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-heartbeat"></i>
+                        Info. Médica
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-book"></i>
+                        Publicaciones
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-laptop-code"></i>
+                        Datos tecnología
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-chart-line"></i>
+                        Planes desarrollo
+                    </a>
+                </nav>
+
+                <!-- Cuadrícula de información -->
+                <div class="info-grid">
+                    <!-- Tarjeta de información personal -->
+                    <div class="info-card">
+                        <!-- Título de la sección -->
+                        <h3>Información Personal</h3>
+                        <!-- Item de información: Cédula -->
+                        <div class="info-item">
+                            <div class="info-label">Cédula</div>
+                            <div class="info-value"></div>
+                        </div>
+                        <!-- Item de información: Fecha de Nacimiento -->
+                        <div class="info-item">
+                            <div class="info-label">Fecha de Nacimiento</div>
+                            <div class="info-value"></div>
+                        </div>
+                        <!-- Item de información: Correo Electrónico -->
+                        <div class="info-item">
+                            <div class="info-label">Correo Electrónico</div>
+                            <div class="info-value"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de información laboral -->
+                    <div class="info-card">
+                        <!-- Título con icono -->
+                        <h3><i class="fas fa-briefcase"></i> Información Laboral</h3>
+                        <!-- Item de información: Cargo Actual -->
+                        <div class="info-item">
+                            <div class="info-label">Cargo Actual</div>
+                            <div class="info-value"></div>
+                        </div>
+                        <!-- Item de información: Unidad -->
+                        <div class="info-item">
+                            <div class="info-label">Unidad</div>
+                            <div class="info-value"></div>
+                        </div>
+                        <!-- Item de información: Fecha de Ingreso -->
+                        <div class="info-item">
+                            <div class="info-label">Fecha de Ingreso</div>
+                            <div class="info-value"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de ubicación y contrato -->
+                    <div class="info-card">
+                        <!-- Título con icono -->
+                        <h3><i class="fas fa-building"></i> Ubicación y Contrato</h3>
+                        <!-- Item de información: Tipo de Contrato -->
+                        <div class="info-item">
+                            <div class="info-label">Tipo de Contrato</div>
+                            <div class="info-value"></div>
+                        </div>
+                        <!-- Item de información: Sede -->
+                        <div class="info-item">
+                            <div class="info-label">Sede</div>
+                            <div class="info-value"></div>
+                        </div>
+                        <!-- Item de información: Modalidad -->
+                        <div class="info-item">
+                            <div class="info-label">Modalidad</div>
+                            <div class="info-value"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección de información básica -->
+                <div class="section-content" id="informacion-basica">
+                    <!-- Comentario sobre el contenido actual -->
+                </div>
+
+                <!-- Sección de información personal (oculta por defecto) -->
+                <div class="section-content" id="informacion-personal" style="display: none;">
+                    <!-- Cuadrícula de información personal -->
+                    <div class="info-grid">
+                        <!-- Tarjeta de información de residencia -->
+                        <div class="info-card">
+                            <!-- Título con icono -->
+                            <h3><i class="fas fa-home"></i> Información de Residencia</h3>
+                            <!-- Item de información: Dirección -->
+                            <div class="info-item">
+                                <div class="info-label">Dirección</div>
+                                <div class="info-value">Calle 123 #45-67</div>
+                            </div>
+                            <!-- Item de información: Ciudad -->
+                            <div class="info-item">
+                                <div class="info-label">Ciudad</div>
+                                <div class="info-value">Medellín</div>
+                            </div>
+                            <!-- Item de información: Teléfono -->
+                            <div class="info-item">
+                                <div class="info-label">Teléfono</div>
+                                <div class="info-value">+57 300 123 4567</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tarjeta de documentación -->
+                        <div class="info-card">
+                            <!-- Título con icono -->
+                            <h3><i class="fas fa-id-card"></i> Documentación</h3>
+                            <!-- Item de información: Tipo de Documento -->
+                            <div class="info-item">
+                                <div class="info-label">Tipo de Documento</div>
+                                <div class="info-value">Cédula de Ciudadanía</div>
+                            </div>
+                            <!-- Item de información: Lugar de Expedición -->
+                            <div class="info-item">
+                                <div class="info-label">Lugar de Expedición</div>
+                                <div class="info-value">Medellín, Antioquia</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección de novedades (oculta por defecto) -->
+                <div class="section-content" id="novedades-empleados" style="display: none;">
+                    <!-- Espacio para el contenido de novedades -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Script para la funcionalidad de la página -->
+    <script src="../Scripts/empleado-detalle.js"></script>
+</body>
+</html> 

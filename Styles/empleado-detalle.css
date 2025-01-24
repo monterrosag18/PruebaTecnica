@@ -1,0 +1,468 @@
+/* Variables adicionales */
+:root {
+    --header-bg: #f8f9fa;
+    --border-color: #e0e4e8;
+    --hover-color: rgba(220, 0, 50, 0.1);
+}
+
+/* Contenedor principal del perfil */
+.profile-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* Header del perfil mejorado */
+.profile-header-wrapper {
+    background: var(--header-bg);
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.02);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-photo:hover .photo-overlay {
+    opacity: 1;
+}
+
+.change-photo-btn {
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.change-photo-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Información del perfil mejorada */
+.profile-info-header {
+    flex-grow: 1;
+}
+
+.profile-info-header h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.profile-position {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.profile-department {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Estado del empleado mejorado */
+.profile-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: white;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.profile-status.active {
+    color: #28a745;
+    border: 1px solid #28a74544;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+}
+
+/* Acciones del perfil mejoradas */
+.profile-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-actualizar, .btn-export {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-actualizar {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-export {
+    background: white;
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-actualizar:hover, .btn-export:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.employee-selector select {
+    padding: 0.8rem 2rem 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    min-width: 250px;
+    background: white;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1.5em;
+}
+
+/* Responsive mejorado */
+@media (max-width: 1024px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .profile-info-header {
+        width: 100%;
+    }
+
+    .profile-nav {
+        padding: 0.5rem;
+    }
+
+    .profile-nav a {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+        flex: 1 1 calc(33.33% - 0.5rem);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .profile-nav a {
+        flex: 1 1 calc(50% - 0.5rem);
+    }
+
+    .profile-actions {
+        padding: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-actualizar, .btn-export {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+
+    .employee-selector {
+        width: 100%;
+    }
+
+    .employee-selector select {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-header-wrapper {
+        padding: 0.5rem;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile-position {
+        font-size: 1rem;
+    }
+
+    .profile-nav a {
+        flex: 1 1 100%;
+        font-size: 0.8rem;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .info-card h3 {
+        font-size: 1rem;
+    }
+
+    .info-label, .info-value {
+        font-size: 0.9rem;
+    }
+
+    .section-content {
+        padding: 1rem;
+    }
+}
+
+/* Navegación del perfil mejorada */
+.profile-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.profile-nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #666;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.profile-nav a i {
+    font-size: 1rem;
+}
+
+.profile-nav a:hover {
+    background: rgba(220, 0, 50, 0.1);
+    color: var(--primary-color);
+}
+
+.profile-nav a.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Estilos mejorados para las tarjetas de información */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.info-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.info-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.info-card h3 i {
+    font-size: 1.1rem;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.info-label {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.info-value {
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .profile-nav {
+        justify-content: center;
+    }
+
+    .profile-nav a {
+        flex: 1 1 calc(50% - 1rem);
+        justify-content: center;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-nav a {
+        flex: 1 1 100%;
+    }
+
+    .employee-selector select {
+        width: 100%;
+    }
+}
+
+.employee-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.photo-empleado-2 {
+    display: none;
+}
+
+/* Mostrar foto correspondiente según empleado seleccionado */
+.empleado-2-active .photo-empleado-1 {
+    display: none;
+}
+
+.empleado-2-active .photo-empleado-2 {
+    display: block;
+}
+
+.section-content {
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+}
+
+.section-content:not(:first-child) {
+    display: none;
+}

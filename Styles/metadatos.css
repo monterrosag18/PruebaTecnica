@@ -1,0 +1,436 @@
+/* Contenedor del encabezado de metadatos que usa flexbox para organizar elementos horizontalmente */
+.metadata-header {
+    display: flex; /* Establece el contenedor como flexbox */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 2rem; /* Agrega margen inferior */
+}
+
+/* Contenedor para los botones de acción usando flexbox con espacio entre ellos */
+.metadata-actions {
+    display: flex; /* Establece el contenedor como flexbox */
+    gap: 1rem; /* Espacio entre elementos */
+}
+
+/* Estilos base compartidos entre botones primarios y secundarios */
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 1.5rem; /* Relleno interno */
+    border-radius: 6px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor a mano */
+    display: flex; /* Usa flexbox para alinear contenido */
+    align-items: center; /* Centra verticalmente */
+    gap: 0.5rem; /* Espacio entre icono y texto */
+    font-weight: 500; /* Grosor de fuente medio */
+    transition: all 0.3s ease; /* Animación suave */
+}
+
+/* Estilos específicos para botones primarios */
+.btn-primary {
+    background: var(--primary-color); /* Color de fondo principal */
+    color: white; /* Texto blanco */
+}
+
+/* Estilos específicos para botones secundarios */
+.btn-secondary {
+    background: white; /* Fondo blanco */
+    color: var(--secondary-color); /* Color de texto secundario */
+    border: 1px solid #e0e4e8; /* Borde sutil */
+}
+
+/* Cuadrícula responsiva para organizar las tarjetas de metadatos */
+.metadata-grid {
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Columnas responsivas */
+    gap: 1.5rem; /* Espacio entre tarjetas */
+}
+
+/* Estilos base para las tarjetas de metadatos */
+.metadata-card {
+    background: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra suave */
+    overflow: hidden; /* Oculta contenido desbordado */
+    transition: transform 0.3s ease; /* Animación al hover */
+}
+
+/* Efecto de elevación al pasar el mouse sobre las tarjetas */
+.metadata-card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta */
+}
+
+/* Estilos para el encabezado de cada tarjeta */
+.card-header {
+    padding: 1.5rem; /* Relleno interno */
+    background: #f8f9fa; /* Fondo gris claro */
+    border-bottom: 1px solid #e0e4e8; /* Borde inferior */
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Distribuye espacio */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Estilos para las insignias numéricas */
+.badge {
+    background: var(--primary-color); /* Color de fondo principal */
+    color: white; /* Texto blanco */
+    padding: 0.3rem 0.8rem; /* Relleno interno */
+    border-radius: 20px; /* Bordes muy redondeados */
+    font-size: 0.8rem; /* Tamaño de texto pequeño */
+}
+
+/* Estilos para la tabla de metadatos */
+.metadata-table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsa bordes */
+}
+
+/* Estilos para celdas de la tabla */
+.metadata-table th,
+.metadata-table td {
+    padding: 1rem; /* Relleno interno */
+    text-align: left; /* Alineación izquierda */
+    border-bottom: 1px solid #e0e4e8; /* Borde inferior */
+}
+
+/* Estilos base para insignias de tipo de campo */
+.type-badge {
+    padding: 0.3rem 0.6rem; /* Relleno interno */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 0.8rem; /* Texto pequeño */
+}
+
+/* Variante para tipo texto */
+.type-badge.text {
+    background: #e3f2fd; /* Fondo azul claro */
+    color: #1976d2; /* Texto azul */
+}
+
+/* Variante para tipo fecha */
+.type-badge.date {
+    background: #f3e5f5; /* Fondo morado claro */
+    color: #7b1fa2; /* Texto morado */
+}
+
+/* Contenedor para botones de acción */
+.actions {
+    display: flex; /* Usa flexbox */
+    gap: 0.5rem; /* Espacio entre botones */
+}
+
+/* Estilos para botones de acción */
+.actions button {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor tipo mano */
+    color: #666; /* Color gris */
+    transition: color 0.3s ease; /* Animación de color */
+}
+
+/* Efecto hover para botones de acción */
+.actions button:hover {
+    color: var(--primary-color); /* Cambia a color principal */
+}
+
+/* Color para textos de éxito */
+.text-success {
+    color: #28a745; /* Verde */
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+    /* Reorganiza el encabezado en columna */
+    .metadata-header {
+        flex-direction: column; /* Apila elementos */
+        gap: 1rem; /* Espacio entre elementos */
+        padding: 0 1rem; /* Relleno horizontal */
+    }
+    
+    /* Ajusta acciones a ancho completo */
+    .metadata-actions {
+        width: 100%; /* Ancho completo */
+        flex-direction: column; /* Apila botones */
+    }
+    
+    /* Ajusta botones a ancho completo */
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Ancho completo */
+        justify-content: center; /* Centra contenido */
+    }
+    
+    /* Ajusta grid a una columna */
+    .metadata-grid {
+        grid-template-columns: 1fr; /* Una columna */
+        padding: 0 1rem; /* Relleno horizontal */
+    }
+
+    /* Ajusta tarjetas para scroll horizontal */
+    .metadata-card {
+        width: 100%; /* Ancho completo */
+        overflow-x: auto; /* Scroll horizontal */
+    }
+
+    /* Reorganiza encabezado de tarjeta */
+    .card-header {
+        flex-direction: column; /* Apila elementos */
+        gap: 0.5rem; /* Espacio entre elementos */
+        text-align: center; /* Centra texto */
+    }
+
+    /* Reduce tamaño de texto en tabla */
+    .metadata-table {
+        font-size: 0.9rem; /* Texto más pequeño */
+    }
+
+    /* Ajusta padding en celdas */
+    .metadata-table th,
+    .metadata-table td {
+        padding: 0.75rem 0.5rem; /* Reduce relleno */
+    }
+
+    /* Ajusta insignias de tipo */
+    .type-badge {
+        padding: 0.2rem 0.4rem; /* Reduce relleno */
+        font-size: 0.75rem; /* Reduce texto */
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    /* Fuerza una columna */
+    .metadata-grid {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+
+    /* Reduce más el texto */
+    .metadata-table {
+        font-size: 0.8rem; /* Texto más pequeño */
+    }
+
+    /* Apila botones de acción */
+    .actions {
+        flex-direction: column; /* Apila elementos */
+        gap: 0.25rem; /* Reduce espacio */
+    }
+
+    /* Ajusta padding de botones */
+    .actions button {
+        padding: 0.5rem; /* Relleno uniforme */
+    }
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    top: 0; /* Desde arriba */
+    left: 0; /* Desde izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    background-color: rgba(0,0,0,0.5); /* Fondo semitransparente */
+    z-index: 1000; /* Capa superior */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background: white; /* Fondo blanco */
+    width: 90%; /* Ancho relativo */
+    max-width: 500px; /* Ancho máximo */
+    margin: 50px auto; /* Centrado */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Sombra */
+}
+
+/* Encabezado del modal */
+.modal-header {
+    padding: 1.5rem; /* Relleno */
+    border-bottom: 1px solid #e0e4e8; /* Borde inferior */
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Distribuye espacio */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Botón para cerrar modal */
+.close-modal {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    font-size: 1.5rem; /* Texto grande */
+    cursor: pointer; /* Cursor tipo mano */
+    color: #666; /* Color gris */
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin: 1rem 1.5rem; /* Margen */
+}
+
+/* Etiquetas de formulario */
+.form-group label {
+    display: block; /* Bloque */
+    margin-bottom: 0.5rem; /* Margen inferior */
+    color: #2C3E50; /* Color oscuro */
+    font-weight: 500; /* Peso medio */
+}
+
+/* Campos de texto y selects */
+.form-group input[type="text"],
+.form-group select {
+    width: 100%; /* Ancho completo */
+    padding: 0.8rem; /* Relleno */
+    border: 1px solid #e0e4e8; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Texto pequeño */
+}
+
+/* Grupo de checkbox */
+.checkbox-group {
+    display: flex; /* Flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 0.5rem; /* Espacio entre elementos */
+}
+
+/* Acciones del modal */
+.modal-actions {
+    padding: 1.5rem; /* Relleno */
+    border-top: 1px solid #e0e4e8; /* Borde superior */
+    display: flex; /* Flexbox */
+    justify-content: flex-end; /* Alinea al final */
+    gap: 1rem; /* Espacio entre botones */
+}
+    /* Ajusta grid a una columna */
+    .metadata-grid {
+        grid-template-columns: 1fr; /* Una columna */
+        padding: 0 1rem; /* Relleno horizontal */
+    }
+
+    /* Ajusta tarjetas para scroll horizontal */
+    .metadata-card {
+        width: 100%; /* Ancho completo */
+        overflow-x: auto; /* Scroll horizontal */
+    }
+
+    /* Reorganiza encabezado de tarjeta */
+    .card-header {
+        flex-direction: column; /* Apila elementos */
+        gap: 0.5rem; /* Espacio entre elementos */
+        text-align: center; /* Centra texto */
+    }
+
+    /* Reduce tamaño de texto en tabla */
+    .metadata-table {
+        font-size: 0.9rem; /* Texto más pequeño */
+    }
+
+    /* Ajusta padding en celdas */
+    .metadata-table th,
+    .metadata-table td {
+        padding: 0.75rem 0.5rem; /* Reduce relleno */
+    }
+
+    /* Ajusta insignias de tipo */
+    .type-badge {
+        padding: 0.2rem 0.4rem; /* Reduce relleno */
+        font-size: 0.75rem; /* Reduce texto */
+    }
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    /* Fuerza una columna */
+    .metadata-grid {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+
+    /* Reduce más el texto */
+    .metadata-table {
+        font-size: 0.8rem; /* Texto más pequeño */
+    }
+
+    /* Apila botones de acción */
+    .actions {
+        flex-direction: column; /* Apila elementos */
+        gap: 0.25rem; /* Reduce espacio */
+    }
+
+    /* Ajusta padding de botones */
+    .actions button {
+        padding: 0.5rem; /* Relleno uniforme */
+    }
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    top: 0; /* Desde arriba */
+    left: 0; /* Desde izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    background-color: rgba(0,0,0,0.5); /* Fondo semitransparente */
+    z-index: 1000; /* Capa superior */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background: white; /* Fondo blanco */
+    width: 90%; /* Ancho relativo */
+    max-width: 500px; /* Ancho máximo */
+    margin: 50px auto; /* Centrado */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Sombra */
+}
+
+/* Encabezado del modal */
+.modal-header {
+    padding: 1.5rem; /* Relleno */
+    border-bottom: 1px solid #e0e4e8; /* Borde inferior */
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Distribuye espacio */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Botón para cerrar modal */
+.close-modal {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    font-size: 1.5rem; /* Texto grande */
+    cursor: pointer; /* Cursor tipo mano */
+    color: #666; /* Color gris */
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin: 1rem 1.5rem; /* Margen */
+}
+
+/* Etiquetas de formulario */
+.form-group label {
+    display: block; /* Bloque */
+    margin-bottom: 0.5rem; /* Margen inferior */
+    color: #2C3E50; /* Color oscuro */
+    font-weight: 500; /* Peso medio */
+}
+
+/* Campos de texto y selects */
+.form-group input[type="text"],
+.form-group select {
+    width: 100%; /* Ancho completo */
+    padding: 0.8rem; /* Relleno */
+    border: 1px solid #e0e4e8; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Texto pequeño */
+}
+
+/* Grupo de checkbox */
+.checkbox-group {
+    display: flex; /* Flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 0.5rem; /* Espacio entre elementos */
+}
+
+/* Acciones del modal */
+.modal-actions {
+    padding: 1.5rem; /* Relleno */
+    border-top: 1px solid #e0e4e8; /* Borde superior */
+    display: flex; /* Flexbox */
+    justify-content: flex-end; /* Alinea al final */
+    gap: 1rem; /* Espacio entre botones */
+}

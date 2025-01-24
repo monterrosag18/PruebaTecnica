@@ -1,0 +1,310 @@
+<!-- Declaración del tipo de documento HTML -->
+<!DOCTYPE html>
+<!-- Elemento raíz HTML con idioma español -->
+<html lang="es">
+<!-- Sección head con metadatos -->
+<head>
+    <!-- Codificación de caracteres UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Configuración de la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Listado de Empleados IEB</title>
+    <!-- Enlace a hoja de estilos principal -->
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <!-- Enlace a hoja de estilos específica para listado de empleados -->
+    <link rel="stylesheet" href="../Styles/listado-empleados.css">
+    <!-- Enlace a biblioteca de iconos Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<!-- Cuerpo del documento -->
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <!-- Título principal -->
+        <h1>Gestor del Talento Humano</h1>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="menu">
+            <!-- Título del menú -->
+            <h2>Menú</h2>
+            <!-- Lista de navegación -->
+            <ul>
+                <!-- Enlaces de navegación -->
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="informes.html">Informes e Indicadores</a></li>
+                <li><a href="listado-empleados.html" class="active">Listado de Empleados</a></li>
+                <li><a href="metadatos.html">Gestión de Metadatos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <!-- Título de la sección -->
+            <h2>Listado de Empleados IEB</h2>
+            
+            <!-- Sección de filtros -->
+            <div class="filters-section">
+                <!-- Grupo de filtros por estado -->
+                <div class="filter-group">
+                    <!-- Título del grupo de filtros -->
+                    <h3>Visualizar los empleados:</h3>
+                    <!-- Grupo de botones radio -->
+                    <div class="radio-group">
+                        <!-- Opción para empleados activos -->
+                        <div class="radio-item">
+                            <input type="radio" id="activos" name="status" checked>
+                            <label for="activos">Activos</label>
+                        </div>
+                        <!-- Opción para empleados inactivos -->
+                        <div class="radio-item">
+                            <input type="radio" id="inactivos" name="status">
+                            <label for="inactivos">Inactivos</label>
+                        </div>
+                        <!-- Opción para todos los empleados -->
+                        <div class="radio-item">
+                            <input type="radio" id="todos" name="status">
+                            <label for="todos">Activos e Inactivos</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtros por ubicación -->
+                <div class="location-filters">
+                    <!-- Cuadrícula de checkboxes -->
+                    <div class="checkbox-grid">
+                        <!-- Checkbox para Sede Cliente MDE -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sede-cliente-mde" checked>
+                            <label for="sede-cliente-mde">Sede Cliente MDE</label>
+                        </div>
+                        <!-- Checkbox para Sede Cliente BOG -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sede-cliente-bog" checked>
+                            <label for="sede-cliente-bog">Sede Cliente BOG</label>
+                        </div>
+                        <!-- Checkbox para Sede Cliente CTG -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sede-cliente-ctg" checked>
+                            <label for="sede-cliente-ctg">Sede Cliente CTG</label>
+                        </div>
+                        <!-- Checkbox para Teletrabajo MDE -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="teletrabajo-mde" checked>
+                            <label for="teletrabajo-mde">Teletrabajo MDE</label>
+                        </div>
+                        <!-- Checkbox para Teletrabajo BOG -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="teletrabajo-bog" checked>
+                            <label for="teletrabajo-bog">Teletrabajo BOG</label>
+                        </div>
+                        <!-- Checkbox para Teletrabajo BAQ -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="teletrabajo-baq" checked>
+                            <label for="teletrabajo-baq">Teletrabajo BAQ</label>
+                        </div>
+                        <!-- Checkbox para Sede Villavicencio -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sede-villavicencio">
+                            <label for="sede-villavicencio">Sede Villavicencio</label>
+                        </div>
+                        <!-- Checkbox para Movi Software -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="movi-software">
+                            <label for="movi-software">Movi Software</label>
+                        </div>
+                        <!-- Checkbox para Sede Medellín -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sede-medellin" checked>
+                            <label for="sede-medellin">Sede Medellín</label>
+                        </div>
+                        <!-- Checkbox para Sede Bogotá -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sede-bogota">
+                            <label for="sede-bogota">Sede Bogotá</label>
+                        </div>
+                        <!-- Checkbox para Sede Chile -->
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sede-chile">
+                            <label for="sede-chile">Sede Chile</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtros por tipo de asesor -->
+                <div class="asesor-filters">
+                    <!-- Grupo de botones radio -->
+                    <div class="radio-group">
+                        <!-- Opción para incluir asesores -->
+                        <div class="radio-item">
+                            <input type="radio" id="con-asesores" name="asesor" checked>
+                            <label for="con-asesores">Con Asesores</label>
+                        </div>
+                        <!-- Opción para excluir asesores -->
+                        <div class="radio-item">
+                            <input type="radio" id="sin-asesores" name="asesor">
+                            <label for="sin-asesores">Sin Asesores</label>
+                        </div>
+                        <!-- Opción para mostrar solo asesores -->
+                        <div class="radio-item">
+                            <input type="radio" id="solo-asesores" name="asesor">
+                            <label for="solo-asesores">Sólo Asesores</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles de filtro adicionales -->
+                <div class="filter-controls">
+                    <!-- Selector de tipo de teletrabajador -->
+                    <select class="filter-select">
+                        <option value="">Filtro de teletrabajador...</option>
+                        <option value="1">Teletrabajador Tiempo Completo</option>
+                        <option value="2">Teletrabajador Parcial</option>
+                        <option value="3">No Teletrabajador</option>
+                    </select>
+                    <!-- Botón para aplicar filtros -->
+                    <button class="btn-listar">Listar</button>
+                </div>
+            </div>
+
+            <!-- Sección de tabla -->
+            <div class="table-section">
+                <!-- Controles de tabla -->
+                <div class="table-controls">
+                    <!-- Control de número de entradas -->
+                    <div class="entries-control">
+                        Mostrar 
+                        <select class="entries-select">
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        filas
+                    </div>
+                    <!-- Control de búsqueda -->
+                    <div class="search-control">
+                        Buscar: 
+                        <input type="text" value="TTD desarr" class="search-input">
+                    </div>
+                </div>
+
+                <!-- Información del total de registros -->
+                <div class="total-records">
+                    El total de empleados es 347
+                </div>
+
+                <!-- Contenedor de tabla responsive -->
+                <div class="table-responsive">
+                    <!-- Tabla de datos -->
+                    <table class="data-table">
+                        <!-- Encabezado de tabla -->
+                        <thead>
+                            <tr>
+                                <th class="th-cedula">Cédula</th>
+                                <th class="th-nombres">Apellidos y Nombres</th>
+                                <th class="th-cargo">Cargo Funcional</th>
+                                <th class="th-salarial">Cargo Salarial</th>
+                                <th class="th-unidad">Unidad</th>
+                                <th class="th-contrato">Tipo Contrato</th>
+                                <th class="th-sede">Sede</th>
+                                <th class="th-opciones">Opciones</th>
+                            </tr>
+                        </thead>
+                        <!-- Cuerpo de tabla -->
+                        <tbody>
+                            <!-- Fila 1 -->
+                            <tr>
+                                <td data-label="Cédula">2345678</td>
+                                <td data-label="Apellidos y Nombres">Cadavid Escobar Juan Pablo</td>
+                                <td data-label="Cargo Funcional">Desarrollador de Software</td>
+                                <td data-label="Cargo Salarial">Asistente Tecnológico 1</td>
+                                <td data-label="Unidad">Tecnología y Transformación Digital - TTD</td>
+                                <td data-label="Tipo Contrato">Contrato a Término Fijo</td>
+                                <td data-label="Sede">Sede Medellín</td>
+                                <td data-label="Opciones" class="opciones-cell">
+                                    <div class="opciones-container">
+                                        <a href="empleado-detalle.html?id=2345678" class="btn-edit" title="Ver detalles">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr>
+                                <td data-label="Cédula">3456789</td>
+                                <td data-label="Apellidos y Nombres">Arroyave Loaiza Esteban</td>
+                                <td data-label="Cargo Funcional">Analista de Sistemas</td>
+                                <td data-label="Cargo Salarial">Analista 2</td>
+                                <td data-label="Unidad">Tecnología y Transformación Digital - TTD</td>
+                                <td data-label="Tipo Contrato">Contrato Indefinido</td>
+                                <td data-label="Sede">Sede Bogotá</td>
+                                <td data-label="Opciones" class="opciones-cell">
+                                    <div class="opciones-container">
+                                        <a href="empleado-detalle.html?id=3456789" class="btn-edit" title="Ver detalles">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Fila 3 -->
+                            <tr>
+                                <td data-label="Cédula">4567890</td>
+                                <td data-label="Apellidos y Nombres">Gómez Pérez María</td>
+                                <td data-label="Cargo Funcional">Líder de Proyectos</td>
+                                <td data-label="Cargo Salarial">Líder 1</td>
+                                <td data-label="Unidad">Tecnología y Transformación Digital - TTD</td>
+                                <td data-label="Tipo Contrato">Contrato Indefinido</td>
+                                <td data-label="Sede">Sede Medellín</td>
+                                <td data-label="Opciones" class="opciones-cell">
+                                    <div class="opciones-container">
+                                        <a href="empleado-detalle.html?id=4567890" class="btn-edit" title="Ver detalles">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Fila 4 -->
+                            <tr>
+                                <td data-label="Cédula">5678901</td>
+                                <td data-label="Apellidos y Nombres">Rodríguez López Carlos</td>
+                                <td data-label="Cargo Funcional">Arquitecto de Software</td>
+                                <td data-label="Cargo Salarial">Arquitecto Senior</td>
+                                <td data-label="Unidad">Tecnología y Transformación Digital - TTD</td>
+                                <td data-label="Tipo Contrato">Contrato Indefinido</td>
+                                <td data-label="Sede">Sede Bogotá</td>
+                                <td data-label="Opciones" class="opciones-cell">
+                                    <div class="opciones-container">
+                                        <a href="empleado-detalle.html?id=5678901" class="btn-edit" title="Ver detalles">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pie de tabla -->
+                <div class="table-footer">
+                    <!-- Paginación -->
+                    <div class="pagination">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">Sig</button>
+                        <button class="page-btn">Últ</button>
+                    </div>
+                    <!-- Información de registros mostrados -->
+                    <div class="records-info">
+                        Mostrando 1 a 5 de 5 filas (filtrado de un total de 347 filas)
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

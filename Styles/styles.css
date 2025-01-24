@@ -1,0 +1,529 @@
+/* Definición de variables CSS para colores y efectos principales */
+:root {
+    --primary-color: #DC0032;      /* Color rojo primario */
+    --secondary-color: #2C3E50;    /* Color azul secundario */
+    --background-color: #F5F6F7;   /* Color de fondo gris claro */
+    --text-color: #333;            /* Color de texto principal */
+    --hover-bg: #f1f1f1;           /* Color de fondo al pasar el mouse */
+    --menu-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Sombra para el menú */
+    --transition-speed: 0.3s;      /* Velocidad de transiciones */
+}
+
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base del body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Estilo del encabezado principal */
+header {
+    background-color: #DC0032;
+    color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Contenedor principal que usa flexbox */
+.container {
+    display: flex;
+    min-height: calc(100vh - 70px);
+    background-color: white;
+}
+
+/* Estilos del menú lateral */
+.menu {
+    width: 250px;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+}
+
+/* Título del menú */
+.menu h2 {
+    color: #2C3E50;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    padding-left: 0.5rem;
+}
+
+/* Lista del menú */
+.menu ul {
+    list-style: none;
+}
+
+/* Elementos de la lista del menú */
+.menu li {
+    margin: 0.8rem 0;
+}
+
+/* Enlaces del menú */
+.menu a {
+    text-decoration: none;
+    color: #2C3E50;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e0e4e8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+/* Icono de flecha para los botones del menú */
+.menu a::before {
+    content: '→';
+    margin-right: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para los enlaces del menú */
+.menu a:hover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #ff1a1a 100%);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 12px rgba(220, 0, 50, 0.2),
+        0 0 0 2px rgba(220, 0, 50, 0.1);
+}
+
+/* Animación del icono en hover */
+.menu a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Efecto de brillo al hover */
+.menu a::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+/* Animación del efecto de brillo */
+.menu a:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translateX(100%);
+}
+
+/* Estado activo del botón del menú */
+.menu a:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(220, 0, 50, 0.2);
+}
+
+/* Estilo para el enlace activo del menú */
+.menu a.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: transparent;
+    box-shadow: 
+        0 4px 12px rgba(220, 0, 50, 0.2),
+        0 0 0 2px rgba(220, 0, 50, 0.1);
+}
+
+/* Icono visible para el enlace activo */
+.menu a.active::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Contenido principal */
+.content {
+    flex: 1;
+    padding: 2rem;
+    background-color: white;
+}
+
+/* Títulos del contenido principal */
+.content h2 {
+    color: #2C3E50;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+/* Contenedor de bienvenida */
+.welcome-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Imagen del equipo */
+.team-image {
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilos de párrafos */
+p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Encabezado del perfil */
+.profile-header {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+/* Navegación del perfil */
+.profile-nav {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    border-bottom: 1px solid #e0e4e8;
+    padding-bottom: 1rem;
+}
+
+/* Enlaces de navegación del perfil */
+.profile-nav a {
+    text-decoration: none;
+    color: #666;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Estados hover y activo de la navegación del perfil */
+.profile-nav a:hover,
+.profile-nav a.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Grid de información */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Tarjetas de información */
+.info-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0e4e8;
+}
+
+/* Títulos de las tarjetas de información */
+.info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Elementos de información */
+.info-item {
+    margin-bottom: 0.8rem;
+}
+
+/* Etiquetas de información */
+.info-label {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Valores de información */
+.info-value {
+    font-weight: 500;
+}
+
+/* Sección de bienvenida */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+/* Texto de bienvenida */
+.welcome-text {
+    flex: 1;
+}
+
+/* Título de bienvenida */
+.welcome-text h2 {
+    color: var(--secondary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Descripción de bienvenida */
+.welcome-description {
+    color: #555;
+}
+
+/* Texto principal */
+.lead {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Lista de características */
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+/* Elementos de características */
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover de elementos de características */
+.feature-item:hover {
+    transform: translateX(5px);
+    background: #f0f2f5;
+}
+
+/* Iconos de características */
+.feature-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* Texto de características */
+.feature-item span {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Contenedor de imagen de bienvenida */
+.welcome-image {
+    position: relative;
+    flex: 0 0 45%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Imagen del equipo */
+.team-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en la imagen */
+.welcome-image:hover .team-image {
+    transform: scale(1.05);
+}
+
+/* Overlay de la imagen */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(220, 0, 50, 0.1),
+        transparent
+    );
+}
+
+/* Estilos responsive */
+@media (max-width: 1024px) {
+    /* Ajustes para tablets */
+    .welcome-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .welcome-image {
+        width: 100%;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para móviles */
+    .welcome-section {
+        padding: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+}
+
+/* Configuración del contenedor principal responsive */
+.container {
+    display: flex;
+    min-height: calc(100vh - 70px);
+    background-color: white;
+    flex-direction: row;
+}
+
+/* Configuración del menú lateral responsive */
+.menu {
+    width: 250px;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (max-width: 1024px) {
+    /* Ajustes para tablets */
+    .container {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .menu li {
+        margin: 0;
+        flex: 1 1 250px;
+        max-width: 300px;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .welcome-image {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .lead {
+        text-align: center;
+    }
+
+    .feature-list {
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para móviles */
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+
+    .welcome-section {
+        padding: 1rem;
+    }
+
+    .menu li {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .feature-item {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .feature-item span {
+        font-size: 0.9rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para móviles pequeños */
+    .welcome-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        padding: 0.8rem;
+    }
+
+    .menu h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .menu a {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+}

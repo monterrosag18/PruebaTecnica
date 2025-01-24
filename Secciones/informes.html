@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Informes e Indicadores - Gestor del Talento Humano</title>
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/informes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Gestor del Talento Humano</h1>
+    </header>
+
+    <div class="container">
+        <nav class="menu">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="informes.html" class="active">Informes e Indicadores</a></li>
+                <li><a href="listado-empleados.html">Listado de Empleados</a></li>
+                <li><a href="metadatos.html">Gestión de Metadatos</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <div class="dashboard-header">
+                <h2>Informes e Indicadores</h2>
+                <div class="period-selector">
+                    <label>Período:</label>
+                    <select>
+                        <option>Último mes</option>
+                        <option>Último trimestre</option>
+                        <option>Último año</option>
+                        <option>Personalizado</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Tarjetas de resumen -->
+                <div class="summary-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Empleados</h3>
+                            <p class="card-value">347</p>
+                            <span class="trend positive">+2.5% vs mes anterior</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Nuevas Contrataciones</h3>
+                            <p class="card-value">12</p>
+                            <span class="trend positive">+4 vs mes anterior</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-user-minus"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Rotación</h3>
+                            <p class="card-value">2.8%</p>
+                            <span class="trend negative">+0.5% vs mes anterior</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Capacitación</h3>
+                            <p class="card-value">85%</p>
+                            <span class="trend positive">+5% vs mes anterior</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráficos -->
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <h3>Distribución por Departamento</h3>
+                        <canvas id="departmentChart"></canvas>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Tendencia de Contrataciones</h3>
+                        <canvas id="hiringChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tabla de indicadores detallados -->
+                <div class="detailed-metrics">
+                    <h3>Indicadores Detallados</h3>
+                    <table class="metrics-table">
+                        <thead>
+                            <tr>
+                                <th>Indicador</th>
+                                <th>Valor Actual</th>
+                                <th>Meta</th>
+                                <th>Tendencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Satisfacción laboral</td>
+                                <td>85%</td>
+                                <td>90%</td>
+                                <td><span class="trend positive">↑</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tiempo promedio de contratación</td>
+                                <td>25 días</td>
+                                <td>20 días</td>
+                                <td><span class="trend negative">↓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tasa de retención</td>
+                                <td>92%</td>
+                                <td>95%</td>
+                                <td><span class="trend neutral">→</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../Scripts/informes.js"></script>
+</body>
+</html> 

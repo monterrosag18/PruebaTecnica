@@ -1,0 +1,201 @@
+<!-- Declaración del tipo de documento HTML -->
+<!DOCTYPE html>
+<!-- Elemento raíz HTML con idioma español -->
+<html lang="es">
+<!-- Sección head con metadatos -->
+<head>
+    <!-- Codificación de caracteres UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Configuración de la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Título de la página -->
+    <title>Gestión de Metadatos - Gestor del Talento Humano</title>
+    <!-- Enlace a hoja de estilos principal -->
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <!-- Enlace a hoja de estilos específica para metadatos -->
+    <link rel="stylesheet" href="../Styles/metadatos.css">
+    <!-- Enlace a biblioteca de iconos Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<!-- Cuerpo del documento -->
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <!-- Título principal -->
+        <h1>Gestor del Talento Humano</h1>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="menu">
+            <!-- Título del menú -->
+            <h2>Menú</h2>
+            <!-- Lista de navegación -->
+            <ul>
+                <!-- Enlaces de navegación -->
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="informes.html">Informes e Indicadores</a></li>
+                <li><a href="listado-empleados.html">Listado de Empleados</a></li>
+                <li><a href="metadatos.html" class="active">Gestión de Metadatos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <!-- Encabezado de la sección de metadatos -->
+            <div class="metadata-header">
+                <!-- Título con icono -->
+                <h2><i class="fas fa-database"></i> Gestión de Metadatos</h2>
+                <!-- Contenedor de botones de acción -->
+                <div class="metadata-actions">
+                    <!-- Botón para nuevo campo -->
+                    <button class="btn-primary" id="btnNuevoCampo">
+                        <i class="fas fa-plus"></i> Nuevo Campo
+                    </button>
+                    <!-- Botón para exportar -->
+                    <button class="btn-secondary" id="btnExportar">
+                        <i class="fas fa-download"></i> Exportar Estructura
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cuadrícula de tarjetas de metadatos -->
+            <div class="metadata-grid">
+                <!-- Tarjeta de datos personales -->
+                <div class="metadata-card">
+                    <!-- Encabezado de la tarjeta -->
+                    <div class="card-header">
+                        <!-- Título con icono -->
+                        <h3><i class="fas fa-user"></i> Datos Personales</h3>
+                        <!-- Contador de campos -->
+                        <span class="badge">12 campos</span>
+                    </div>
+                    <!-- Contenido de la tarjeta -->
+                    <div class="card-content">
+                        <!-- Tabla de metadatos -->
+                        <table class="metadata-table">
+                            <!-- Encabezado de la tabla -->
+                            <thead>
+                                <tr>
+                                    <th>Campo</th>
+                                    <th>Tipo</th>
+                                    <th>Obligatorio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <!-- Cuerpo de la tabla -->
+                            <tbody>
+                                <!-- Fila para Nombre Completo -->
+                                <tr>
+                                    <td>Nombre Completo</td>
+                                    <td><span class="type-badge text">Texto</span></td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                    <td class="actions">
+                                        <button title="Editar"><i class="fas fa-edit"></i></button>
+                                        <button title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <!-- Fila para Fecha de Nacimiento -->
+                                <tr>
+                                    <td>Fecha de Nacimiento</td>
+                                    <td><span class="type-badge date">Fecha</span></td>
+                                    <td><i class="fas fa-check text-success"></i></td>
+                                    <td class="actions">
+                                        <button title="Editar"><i class="fas fa-edit"></i></button>
+                                        <button title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de datos laborales -->
+                <div class="metadata-card">
+                    <!-- Encabezado de la tarjeta -->
+                    <div class="card-header">
+                        <!-- Título con icono -->
+                        <h3><i class="fas fa-briefcase"></i> Datos Laborales</h3>
+                        <!-- Contador de campos -->
+                        <span class="badge">8 campos</span>
+                    </div>
+                    <!-- Contenido de la tarjeta -->
+                    <div class="card-content">
+                        <!-- Similar table structure -->
+                    </div>
+                </div>
+
+                <!-- Tarjeta de formación académica -->
+                <div class="metadata-card">
+                    <!-- Encabezado de la tarjeta -->
+                    <div class="card-header">
+                        <!-- Título con icono -->
+                        <h3><i class="fas fa-graduation-cap"></i> Formación Académica</h3>
+                        <!-- Contador de campos -->
+                        <span class="badge">6 campos</span>
+                    </div>
+                    <!-- Contenido de la tarjeta -->
+                    <div class="card-content">
+                        <!-- Similar table structure -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para nuevo campo -->
+            <div id="modalNuevoCampo" class="modal">
+                <!-- Contenido del modal -->
+                <div class="modal-content">
+                    <!-- Encabezado del modal -->
+                    <div class="modal-header">
+                        <!-- Título del modal -->
+                        <h3>Nuevo Campo de Metadatos</h3>
+                        <!-- Botón para cerrar -->
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <!-- Formulario para nuevo campo -->
+                    <form id="formNuevoCampo">
+                        <!-- Grupo de formulario para nombre -->
+                        <div class="form-group">
+                            <label for="nombreCampo">Nombre del Campo</label>
+                            <input type="text" id="nombreCampo" required>
+                        </div>
+                        <!-- Grupo de formulario para tipo -->
+                        <div class="form-group">
+                            <label for="tipoCampo">Tipo de Campo</label>
+                            <select id="tipoCampo" required>
+                                <option value="text">Texto</option>
+                                <option value="date">Fecha</option>
+                                <option value="number">Número</option>
+                                <option value="select">Lista de Selección</option>
+                            </select>
+                        </div>
+                        <!-- Grupo de formulario para sección -->
+                        <div class="form-group">
+                            <label for="seccionCampo">Sección</label>
+                            <select id="seccionCampo" required>
+                                <option value="personal">Datos Personales</option>
+                                <option value="laboral">Datos Laborales</option>
+                                <option value="academico">Formación Académica</option>
+                            </select>
+                        </div>
+                        <!-- Grupo de formulario para checkbox -->
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="campoObligatorio">
+                            <label for="campoObligatorio">Campo Obligatorio</label>
+                        </div>
+                        <!-- Acciones del modal -->
+                        <div class="modal-actions">
+                            <button type="button" class="btn-secondary" id="btnCancelar">Cancelar</button>
+                            <button type="submit" class="btn-primary">Guardar Campo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script principal -->
+    <script src="../Scripts/metadatos.js"></script>
+</body>
+</html> 

@@ -1,0 +1,104 @@
+<!-- Declaración del tipo de documento HTML -->
+<!DOCTYPE html>
+<!-- Inicio del documento HTML con idioma español -->
+<html lang="es">
+<!-- Sección head con metadatos -->
+<head>
+    <!-- Codificación de caracteres UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Configuración de la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Gestor del Talento Humano</title>
+    <!-- Enlace a la hoja de estilos CSS -->
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<!-- Cuerpo del documento -->
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <!-- Título principal -->
+        <h1>Gestor del Talento Humano</h1>
+    </header>
+
+    <!-- Contenedor principal con flexbox -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="menu">
+            <!-- Título del menú -->
+            <h2>Menú</h2>
+            <!-- Lista de navegación -->
+            <ul>
+                <!-- Enlaces a diferentes secciones -->
+                <li><a href="Secciones/informes.html">Informes e Indicadores</a></li>
+                <li><a href="Secciones/listado-empleados.html">Listado de Empleados</a></li>
+                <li><a href="Secciones/metadatos.html">Gestión de Metadatos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <!-- Sección de bienvenida -->
+            <div class="welcome-section">
+                <!-- Texto de bienvenida -->
+                <div class="welcome-text">
+                    <!-- Título de bienvenida -->
+                    <h2>Bienvenido al Sistema de Gestión del Talento Humano</h2>
+                    <!-- Descripción de bienvenida -->
+                    <div class="welcome-description">
+                        <!-- Párrafo principal -->
+                        <p class="lead">Una plataforma integral diseñada para gestionar eficientemente el capital humano de nuestra organización.</p>
+                        <!-- Lista de características -->
+                        <div class="feature-list">
+                            <!-- Característica 1 -->
+                            <div class="feature-item">
+                                <!-- Icono de usuarios -->
+                                <i class="fas fa-users"></i>
+                                <!-- Texto de la característica -->
+                                <span>Gestión completa de información de empleados</span>
+                            </div>
+                            <!-- Característica 2 -->
+                            <div class="feature-item">
+                                <!-- Icono de gráfico -->
+                                <i class="fas fa-chart-line"></i>
+                                <!-- Texto de la característica -->
+                                <span>Indicadores y métricas en tiempo real</span>
+                            </div>
+                            <!-- Característica 3 -->
+                            <div class="feature-item">
+                                <!-- Icono de documento -->
+                                <i class="fas fa-file-alt"></i>
+                                <!-- Texto de la característica -->
+                                <span>Documentación centralizada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sección de imagen -->
+                <div class="welcome-image">
+                    <!-- Imagen de equipo -->
+                    <img src="https://static.wixstatic.com/media/b7da22_3f8a8927b40141a88cf39e34fb7da690~mv2_d_3000_1962_s_2.jpg/v1/fill/w_568,h_372,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/b7da22_3f8a8927b40141a88cf39e34fb7da690~mv2_d_3000_1962_s_2.jpg" alt="Equipo de trabajo colaborativo" class="team-image">
+                    <!-- Superposición de la imagen -->
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+    /* Evento que se ejecuta cuando el DOM está completamente cargado */
+    document.addEventListener('DOMContentLoaded', function() {
+        /* Selecciona el enlace de empleados */
+        const empleadosLink = document.querySelector('a[href="#empleados"]');
+        /* Agrega un evento click al enlace si existe */
+        empleadosLink?.addEventListener('click', function(e) {
+            /* Previene el comportamiento predeterminado del enlace */
+            e.preventDefault();
+            /* Redirige a la página de listado de empleados */
+            window.location.href = 'listado-empleados.html';
+        });
+    });
+    </script>
+</body>
+</html>
